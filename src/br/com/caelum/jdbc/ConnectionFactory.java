@@ -10,10 +10,10 @@ public class ConnectionFactory {
 	{
 		try
 		{
-//			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			//DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			return DriverManager.getConnection("jdbc:mysql://localhost/fj21?autoReconnect=true&useSSL=true", "root", "souzag");
-		}catch (SQLException e)
+		}catch (SQLException | ClassNotFoundException e)
 		{
 			throw new RuntimeException(e);
 //		} catch (ClassNotFoundException e) {
