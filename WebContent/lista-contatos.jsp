@@ -8,7 +8,7 @@
   <title>Insert title here</title>
  </head>
  <body>
-
+  <c:import url = "cabecalho.jsp" />
   <jsp:useBean id = "dao" class = "br.com.caelum.jdbc.dao.ContatoDao"/>
   <table>
    <tr>
@@ -35,5 +35,6 @@
     </tr>
    </c:forEach>
   </table>
+  <c:import url = "rodape.jsp" />
  </body>
 </html>
