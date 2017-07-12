@@ -19,7 +19,7 @@
 		<c:import url = "cabecalho.jsp" />
 	
 		<%-- ASSOCIANDO A ID dao A CLASSE ContatoDao --%>
-		<jsp:useBean id = "dao" class = "br.com.caelum.jdbc.dao.ContatoDao"/>
+		<%--<jsp:useBean id = "dao" class = "br.com.caelum.jdbc.dao.ContatoDao"/>  --%>
 	
 		<table>
 			<tr>
@@ -31,7 +31,7 @@
 			
 			<%-- ITERANDO DENTRO DE UMA COLECAO USANDO forEach
 			<c:forEach var="INDICE" items="LISTA"> --%>
-			<c:forEach var="contato" items="${dao.lista}">
+			<c:forEach var="contato" items="${contatos}">
 			
 				<tr>
 					<td>${contato.nome}</td>
@@ -54,7 +54,7 @@
 					<td><fmt:formatDate value = "${contato.dataNascimento.time}" pattern = "dd/MM/yyyy" /></td>
 					
 					<td>
-						<a href="mvc?logica=RemoveContatoLogic&id=${contato.id} }">Remover</a>
+						<a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a>
 					</td>
 				</tr>
 			</c:forEach>

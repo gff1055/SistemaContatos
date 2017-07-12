@@ -33,7 +33,10 @@ public class ControllerServlet extends HttpServlet{
 			/*PEGANDO A CLASSE EM TEMPO DE EXECUCAO A PARTIR DA STRING DO NOME DO PACOTE*/
 			Class classe=Class.forName(nomeDaClasse);	//Gerando uma representacao da classe
 			Logica logica=(Logica)classe.newInstance();	//Instanciando a classe utilizando uma interface
+			
+			
 			String pagina=logica.executa(request,response);	 //executando funcao predefinida da interface
+			
 			
 			//USANDO OBJETO RequestDispatcher PARA ACESSAR OUTRO RECURSO WEB(pagina no caso)
 			request.getRequestDispatcher(pagina).forward(request,response);			
